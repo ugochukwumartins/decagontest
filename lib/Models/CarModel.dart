@@ -47,8 +47,17 @@ class Carmodels {
   //       "colors": List<dynamic>.from(colors.map((x) => x)),
   //       "countries": List<dynamic>.from(countries.map((x) => x)),
   //     };
-  static List<String> Passstrings(jsasonstring) {
+  static String Passstrings(jsasonstring) {
+    String country;
     List<String> stringdata = new List<String>.from(jsasonstring);
-    return stringdata;
+    if (stringdata != null) {
+      for (var countries in stringdata) {
+        country = " " + countries;
+      }
+
+      return country;
+    } else {
+      return " no data";
+    }
   }
 }
