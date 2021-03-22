@@ -42,7 +42,7 @@ class SearchItem extends SearchDelegate<String> {
     CsvData.loadCsv().then((value) => Carcsv = value);
     CarcsvSugest = query.isEmpty
         ? Carcsv
-        : CarcsvSugest.where((element) => Carcsv.contains(query));
+        : CarcsvSugest.where((element) => Carcsv.contains(query)).toList();
     return CsvBody(
       Carcsv: CarcsvSugest,
     );
